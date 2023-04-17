@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Hexo原生标签外挂效果测试 | 主标题</title><meta name="author" content="Yuki"><meta name="copyright" content="Yuki"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Block Quote–块引用更好的添加块引用，相较于 md 的块引用方式，会在下方添加作者、出处以及链接等信息（如果添加了的话） 语法： 123&amp;#123;% blockquote [author[, source]] [link] [source_link_title] %&amp;#125;content&amp;#123;% endblockquote %&amp;#125; 参数说明  author，作者信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo原生标签外挂效果测试">
+<meta property="og:url" content="http://example.com/posts/50560.html">
+<meta property="og:site_name" content="主标题">
+<meta property="og:description" content="Block Quote–块引用更好的添加块引用，相较于 md 的块引用方式，会在下方添加作者、出处以及链接等信息（如果添加了的话） 语法： 123&amp;#123;% blockquote [author[, source]] [link] [source_link_title] %&amp;#125;content&amp;#123;% endblockquote %&amp;#125; 参数说明  author，作者信息">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-03-25T05:39:58.463Z">
+<meta property="article:modified_time" content="2023-04-17T07:20:12.074Z">
+<meta property="article:author" content="Yuki">
+<meta property="article:tag" content="关键词">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/50560.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"IKU7LEHDCZ","apiKey":"826409c10c40dca077af7d7db5e962d0","indexName":"hexo_blog","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo原生标签外挂效果测试',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-17 15:20:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/assets/css/universe.css"><link rel="stylesheet" href="/assets/css/my.css"><link rel="stylesheet" href="/assets/css/essay.css"><link rel="stylesheet" href="/assets/css/comment_prompt.css"><link rel="stylesheet" href="/assets/css/comment_beautify.css"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script> LA.init({id:"K2Fc53WVbas2Gobc",ck:"K2Fc53WVbas2Gobc"})</script><script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script><script>new LingQue.Monitor().init({id:"K2FoMHhfLS6Gyce4",sendSuspicious:true});</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/assets/img/star.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/page/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/page/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/page/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-music"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-video"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-video"></i><span> 歌曲</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 番剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-video"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/message_board/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/air-conditioner/"><i class="fa-fw fas fa-music"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/collect/"><i class="fa-fw fas fa-video"></i><span> 藏宝阁</span></a></div><div class="menus_item"><a class="site-page" href="/page/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/page/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="主标题"><span class="site-name">主标题</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/page/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/page/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/page/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-music"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fas fa-video"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/songs/"><i class="fa-fw fas fa-video"></i><span> 歌曲</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="fa-fw fas fa-video"></i><span> 番剧</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/essay/"><i class="fa-fw fas fa-video"></i><span> 说说</span></a></div><div class="menus_item"><a class="site-page" href="/message_board/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/air-conditioner/"><i class="fa-fw fas fa-music"></i><span> 小空调</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/collect/"><i class="fa-fw fas fa-video"></i><span> 藏宝阁</span></a></div><div class="menus_item"><a class="site-page" href="/page/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/page/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Hexo原生标签外挂效果测试</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-25T05:39:58.463Z" title="发表于 2023-03-25 13:39:58">2023-03-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-17T07:20:12.074Z" title="更新于 2023-04-17 15:20:12">2023-04-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Block-Quote–块引用"><a href="#Block-Quote–块引用" class="headerlink" title="Block Quote–块引用"></a>Block Quote–块引用</h1><p>更好的添加块引用，相较于 md 的块引用方式，会在下方添加作者、出处以及链接等信息（如果添加了的话）</p>
+<p><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明</strong></p>
+<ul>
+<li>author，作者信息</li>
+<li>source，来源信息</li>
+<li>link，链接信息</li>
+<li>link，链接对应的标题。增加这个之后，就不会直接显示链接，而是显示一个可以点击的标题</li>
+</ul>
+<p><strong>效果展示：</strong><br>不加参数的效果：</p>
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
+</blockquote>
+
+<p>引用书籍信息：</p>
+<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+
+<p>引用 Twitter 信息：</p>
+<blockquote><p>NEW: DevDocs now comes with syntax highlighting. <a target="_blank" rel="noopener" href="http://devdocs.io/">http://devdocs.io</a></p>
+<footer><strong>@DevDocs</strong><cite><a target="_blank" rel="noopener" href="https://twitter.com/devdocs/status/356095192085962752">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
+
+<p>引用网页信息：</p>
+<blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
+<footer><strong>Seth Godin</strong><cite><a target="_blank" rel="noopener" href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></cite></footer></blockquote>
+
+<h1 id="Code-Block–代码块"><a href="#Code-Block–代码块" class="headerlink" title="Code Block–代码块"></a>Code Block–代码块</h1><p>这个标签插件同样是能够扩展 md 的代码块功能。<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>title：标题内容</li>
+<li>lang：language，代码块上显示的语言类型</li>
+<li>url，添加链接信息</li>
+<li>link text，链接对应的标题</li>
+<li>additional options，额外的说明信息</li>
+</ul>
+<p><strong>效果展示：</strong><br>默认情况：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&#x27;Hello World!&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>添加代码块对应的语言类型：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure>
+
+<p>添加额外的说明内容：</p>
+<figure class="highlight plaintext"><figcaption><span>Array. map</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br></pre></td></tr></table></figure>
+
+<p>添加链接和链接对应的文字内容</p>
+<figure class="highlight plaintext"><figcaption><span>_. compact</span><a target="_blank" rel="noopener" href="http://underscorejs.org/#compact">Underscore. js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_. compact ([0, 1, false, 2, &#x27;&#x27;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Backtick-Code-Block–反引号代码块"><a href="#Backtick-Code-Block–反引号代码块" class="headerlink" title="Backtick Code Block–反引号代码块"></a>Backtick Code Block–反引号代码块</h1><p>反引号代码块，这个就是markdown原生支持的代码块方式，使用三个反引号来包裹住代码部分。<br>这部分功能没有上面那么强大，可以添加额外的说明内容和问题等，但能够满足基本的代码块引用功能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Pull-Quote–添加引用"><a href="#Pull-Quote–添加引用" class="headerlink" title="Pull Quote–添加引用"></a>Pull Quote–添加引用</h1><p><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% pullquote [class] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endpullquote %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>class，可以为left或者right，表示引言部分在哪一边<br>被引用的部分放在这个标签插件的后面</li>
+</ul>
+<p><strong>效果展示</strong><br>class为left，在左边时的效果</p>
+<blockquote class="pullquote left"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula justo, lobortis sit amet semper vel, dignissim sit amet libero. Praesent ac tempus ligula. Maecenas at gravida odio. Etiam tristique volutpat lacus eu faucibus. Donec non tempus arcu. Phasellus adipiscing, mauris nec mollis egestas, ipsum nunc auctor velit, et rhoncus lorem ipsum at ante. Praesent et sem in velit volutpat auctor. Duis vel mauris nulla. Maecenas mattis interdum ante, quis sagittis nibh cursus et. Nulla facilisi. Morbi convallis gravida tortor, ut fermentum enim gravida et. Nunc vel dictum nisl, non ultrices libero. Proin vestibulum felis eget orci consectetur lobortis. Vestibulum augue nulla, iaculis vitae augue vehicula, dignissim ultrices libero. Sed imperdiet urna et quam ultrices tincidunt nec ac magna. Etiam vel pharetra elit.</p>
+<p>class为right，在右边时的效果</p>
+<blockquote class="pullquote right"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ligula justo, lobortis sit amet semper vel, dignissim sit amet libero. Praesent ac tempus ligula. Maecenas at gravida odio. Etiam tristique volutpat lacus eu faucibus. Donec non tempus arcu. Phasellus adipiscing, mauris nec mollis egestas, ipsum nunc auctor velit, et rhoncus lorem ipsum at ante. Praesent et sem in velit volutpat auctor. Duis vel mauris nulla. Maecenas mattis interdum ante, quis sagittis nibh cursus et. Nulla facilisi. Morbi convallis gravida tortor, ut fermentum enim gravida et. Nunc vel dictum nisl, non ultrices libero. Proin vestibulum felis eget orci consectetur lobortis. Vestibulum augue nulla, iaculis vitae augue vehicula, dignissim ultrices libero. Sed imperdiet urna et quam ultrices tincidunt nec ac magna. Etiam vel pharetra elit.</p>
+<h1 id="jsFiddle–嵌入jsFiddle代码"><a href="#jsFiddle–嵌入jsFiddle代码" class="headerlink" title="jsFiddle–嵌入jsFiddle代码"></a>jsFiddle–嵌入jsFiddle代码</h1><p>这个似乎是通过 <code>jsFiddle</code> 这个平台来嵌入前端代码，可以多标签展示js、html、css代码<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% jsfiddle shorttag [tabs] [skin] [width] [height] %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果展示：</strong></p>
+<iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/ccWP7/embedded/js,resources,html,css,result/light" frameborder="0" loading="lazy" allowfullscreen></iframe>
+
+
+
+<h1 id="Gist–嵌入gits代码块"><a href="#Gist–嵌入gits代码块" class="headerlink" title="Gist–嵌入gits代码块"></a>Gist–嵌入gits代码块</h1><p>这个似乎也是借助了其他的工具，展示了git的记录<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% gist gist_id [filename] %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>效果展示：</strong></p>
+<script src="//gist.github.com/996818.js"></script>
+
+
+<h1 id="iframe–嵌入iframe标签"><a href="#iframe–嵌入iframe标签" class="headerlink" title="iframe–嵌入iframe标签"></a>iframe–嵌入iframe标签</h1><p>这个能够在网页中嵌入一个iframe标签，能够实现丰富的功能，甚至能够实现在网页中浏览网页。虽然hexo博客支持html语法，可以直接在网页中使用 <code>&lt;iframe&gt;</code> 直接嵌入<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% iframe url [width] [height] %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>url：需要嵌入内容的网址</li>
+<li>width,height，嵌入内容的宽度和高度，可以使用百分比来设置</li>
+</ul>
+<p><strong>效果展示：</strong></p>
+<iframe src="https://butterfly.js.org/" width="100%" height="300px" frameborder="0" loading="lazy" allowfullscreen></iframe>
+
+
+<h1 id="image–嵌入图片"><a href="#image–嵌入图片" class="headerlink" title="image–嵌入图片"></a>image–嵌入图片</h1><p>和上面类型，能够在网页中嵌入 <code>img</code> 标签来引用图片<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% img [class names] /path/to/image [width] [height] &#x27;&quot;title text&quot; &quot;alt text&quot;&#x27; %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>class names，应该是这个img标签的class信息</li>
+<li>path，应该是图片的路径</li>
+<li>width,height，嵌入图片的宽度和高度</li>
+<li>title text，</li>
+<li>all text，</li>
+</ul>
+<h1 id="Link–添加链接"><a href="#Link–添加链接" class="headerlink" title="Link–添加链接"></a>Link–添加链接</h1><p>这个标签能够实现和md引用链接相同的效果。<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% link text url [external] [title] %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>text，显示链接的问题</li>
+<li>url，对应的链接</li>
+<li>external，</li>
+<li>title，</li>
+</ul>
+<h1 id="include-Code–引用本地代码文件"><a href="#include-Code–引用本地代码文件" class="headerlink" title="include Code–引用本地代码文件"></a>include Code–引用本地代码文件</h1><p>和上面 <code>code block</code> 代码块的作用类型，可以展示代码，但这个是引用本地的代码文件中的内容。文档说是引用 <code>source/downloads/code</code> 文件夹下的代码文件内容，可以通过 <code>from</code> 和 <code>to</code> 来展示指定行的内容。<br>关于代码文件的路径问题，可以在 <code>code_dir</code> 中配置。<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Youtube–插入youtube内容"><a href="#Youtube–插入youtube内容" class="headerlink" title="Youtube–插入youtube内容"></a>Youtube–插入youtube内容</h1><p>为网页插入一个 <code>youtube</code> 内容<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% youtube video_id %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>video_id，视频对应的id号</li>
+</ul>
+<h1 id="Vimeo–插入视频内容"><a href="#Vimeo–插入视频内容" class="headerlink" title="Vimeo–插入视频内容"></a>Vimeo–插入视频内容</h1><p>这个标签是插入 <code>vemeo</code> 网站上的内容，增加了宽度和高度设置<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% vimeo video_id [width] [height] %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>video_id，视频的id号</li>
+<li>width,height，视频的宽度和高度设置</li>
+</ul>
+<h1 id="include-Posts–添加链接其他界面的内容"><a href="#include-Posts–添加链接其他界面的内容" class="headerlink" title="include Posts–添加链接其他界面的内容"></a>include Posts–添加链接其他界面的内容</h1><p>这个功能在界面中添加一个跳转到本博客其他文章的链接，就可以在不知道博客文章网址的情况下，设置一个跳转。<br>使用这个标签，就可以根据文件名进行跳转，而不用理会文件的路径、永久链接等信息。<br>此外此标签不能够被使用在mk的 <code>[]()</code> 语法中<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_path filename %&#125;</span><br><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li>filename，要跳转的文件名</li>
+<li>title，可以不展示原本的标题，可以自定义一个新的标题</li>
+<li>escape，文章的标题以及自定义标题都是默认转义的，如果不需要转义，需要把escape设置为<code>false</code><br><strong>效果展示：</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link 標籤外掛-Tag-Plugins &#x27;How to use &lt;b&gt; tag in title&#x27; %&#125;</span><br><span class="line">&#123;% post_link 標籤外掛-Tag-Plugins &#x27;&lt;b&gt;bold&lt;/b&gt; custom title&#x27; false %&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="include-Assets–添加附件内容"><a href="#include-Assets–添加附件内容" class="headerlink" title="include Assets–添加附件内容"></a>include Assets–添加附件内容</h1><p>为网页添加本地的附件内容，<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path filename %&#125;</span><br><span class="line">&#123;% asset_img filename [title] %&#125;</span><br><span class="line">&#123;% asset_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>参数说明：</strong><br>参数和使用方法上面标签一样</p>
+<h1 id="Raw–展示原本内容"><a href="#Raw–展示原本内容" class="headerlink" title="Raw–展示原本内容"></a>Raw–展示原本内容</h1><p>有些内容需要展示原本的样子，但是如果直接展示，就会转义。而使用 <code>row</code> 标签包裹，里面的内容不会进行任何的处理。这个和md语法中的反引号作用类似<br><strong>语法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% raw %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endraw %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="文章摘要以及截断"><a href="#文章摘要以及截断" class="headerlink" title="文章摘要以及截断"></a>文章摘要以及截断</h1><p>使用 <code>&lt;!-- more --&gt;</code> ，那么在这标签之前的内容就会被视为摘要，在首页中就之后出现这部分的内容。<br>虽然文章的内容被截断，一部分作为摘要显示在首页中，但是这部分内容还是会正常显示在文章页中。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://butterfly.js.org/posts/39b121ef/">Hexo Built-in Tag Plugins (Hexo內置標籤外掛) | Butterfly</a><br><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/tag-plugins">Hexo文档-标签插件</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Yuki</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/50560.html">http://example.com/posts/50560.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">主标题</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/css/coin/reward_coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">不给糖就捣蛋</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="assets/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/assets/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="assets/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/assets/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></button></div><audio id="coinAudio" src="https://cdn.cbd.int/akilar-candyassets@1.0.36/audio/aowu.m4a"></audio><script defer="defer" src="/assets/js/reward_coin.js"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/13405.html" title="butterfly特有标签外挂效果测试"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">butterfly特有标签外挂效果测试</div></div></a></div><div class="next-post pull-right"><a href="/posts/6781.html" title="个性化歌单"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">个性化歌单</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/assets/img/star.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Yuki</div><div class="author-info__description">理科改变世界，拯救世界，文科拯救自己,救赎彼此:<br>一而再，再而三，千千万万次拯救自己于世间水火，万千水火</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Block-Quote%E2%80%93%E5%9D%97%E5%BC%95%E7%94%A8"><span class="toc-number">1.</span> <span class="toc-text">Block Quote–块引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Code-Block%E2%80%93%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text">Code Block–代码块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Backtick-Code-Block%E2%80%93%E5%8F%8D%E5%BC%95%E5%8F%B7%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">3.</span> <span class="toc-text">Backtick Code Block–反引号代码块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pull-Quote%E2%80%93%E6%B7%BB%E5%8A%A0%E5%BC%95%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">Pull Quote–添加引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#jsFiddle%E2%80%93%E5%B5%8C%E5%85%A5jsFiddle%E4%BB%A3%E7%A0%81"><span class="toc-number">5.</span> <span class="toc-text">jsFiddle–嵌入jsFiddle代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gist%E2%80%93%E5%B5%8C%E5%85%A5gits%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">Gist–嵌入gits代码块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#iframe%E2%80%93%E5%B5%8C%E5%85%A5iframe%E6%A0%87%E7%AD%BE"><span class="toc-number">7.</span> <span class="toc-text">iframe–嵌入iframe标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#image%E2%80%93%E5%B5%8C%E5%85%A5%E5%9B%BE%E7%89%87"><span class="toc-number">8.</span> <span class="toc-text">image–嵌入图片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Link%E2%80%93%E6%B7%BB%E5%8A%A0%E9%93%BE%E6%8E%A5"><span class="toc-number">9.</span> <span class="toc-text">Link–添加链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-Code%E2%80%93%E5%BC%95%E7%94%A8%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E6%96%87%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text">include Code–引用本地代码文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Youtube%E2%80%93%E6%8F%92%E5%85%A5youtube%E5%86%85%E5%AE%B9"><span class="toc-number">11.</span> <span class="toc-text">Youtube–插入youtube内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vimeo%E2%80%93%E6%8F%92%E5%85%A5%E8%A7%86%E9%A2%91%E5%86%85%E5%AE%B9"><span class="toc-number">12.</span> <span class="toc-text">Vimeo–插入视频内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-Posts%E2%80%93%E6%B7%BB%E5%8A%A0%E9%93%BE%E6%8E%A5%E5%85%B6%E4%BB%96%E7%95%8C%E9%9D%A2%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">13.</span> <span class="toc-text">include Posts–添加链接其他界面的内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#include-Assets%E2%80%93%E6%B7%BB%E5%8A%A0%E9%99%84%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">14.</span> <span class="toc-text">include Assets–添加附件内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Raw%E2%80%93%E5%B1%95%E7%A4%BA%E5%8E%9F%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="toc-number">15.</span> <span class="toc-text">Raw–展示原本内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81%E4%BB%A5%E5%8F%8A%E6%88%AA%E6%96%AD"><span class="toc-number">16.</span> <span class="toc-text">文章摘要以及截断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-number">17.</span> <span class="toc-text">参考资料</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/24808.html" title="写作时适合听的歌"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="写作时适合听的歌"/></a><div class="content"><a class="title" href="/posts/24808.html" title="写作时适合听的歌">写作时适合听的歌</a><time datetime="2023-03-30T12:31:37.859Z" title="发表于 2023-03-30 20:31:37">2023-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9485.html" title="B站推荐的Up主"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="B站推荐的Up主"/></a><div class="content"><a class="title" href="/posts/9485.html" title="B站推荐的Up主">B站推荐的Up主</a><time datetime="2023-03-26T14:46:19.614Z" title="发表于 2023-03-26 22:46:19">2023-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/6781.html" title="个性化歌单"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="个性化歌单"/></a><div class="content"><a class="title" href="/posts/6781.html" title="个性化歌单">个性化歌单</a><time datetime="2023-03-26T14:06:26.339Z" title="发表于 2023-03-26 22:06:26">2023-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/50560.html" title="Hexo原生标签外挂效果测试"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo原生标签外挂效果测试"/></a><div class="content"><a class="title" href="/posts/50560.html" title="Hexo原生标签外挂效果测试">Hexo原生标签外挂效果测试</a><time datetime="2023-03-25T05:39:58.463Z" title="发表于 2023-03-25 13:39:58">2023-03-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/13405.html" title="butterfly特有标签外挂效果测试"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="butterfly特有标签外挂效果测试"/></a><div class="content"><a class="title" href="/posts/13405.html" title="butterfly特有标签外挂效果测试">butterfly特有标签外挂效果测试</a><time datetime="2023-03-25T05:11:42.012Z" title="发表于 2023-03-25 13:11:42">2023-03-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Yuki</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://personal-blog-twikoo-comment.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://personal-blog-twikoo-comment.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas id="universe"></canvas><script defer src="/assets/js/universe.js"></script><div class="aplayer no-destroy" data-id="2219770152" data-mutex="true" data-lrctype="0" data-order="random" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="false"> </div><script async data-pjax src="/assets/js/essay_custom.js"></script><script async data-pjax src="/assets/js/essay_waterfall.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
