@@ -276,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
       btf.loadLightbox(item.querySelectorAll('img'))
     }
 
+
     const addJustifiedGallery = () => {
       ele.forEach(item => {
         item.classList.contains('url')
